@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Cristal y William rumbo a Perú! 🇵🇪</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rosado: #ffd1dc;
+      --melocoton: #ffb88c;
+      --claro: #fff3e6;
+      --oscuro: #3b0a0a;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, var(--rosado), var(--melocoton));
+      color: var(--oscuro);
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3.2rem;
+      margin-top: 40px;
+      animation: popIn 1s ease-out;
+    }
+
+    .images-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+
+    .llama, .machu, .rainbow {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
+    }
+
+    .llama:hover, .machu:hover, .rainbow:hover {
+      transform: scale(1.05);
+    }
+
+    #countdown {
+      font-size: 2.5rem;
+      margin: 30px auto;
+      background: var(--claro);
+      padding: 25px 35px;
+      border-radius: 20px;
+      display: inline-block;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1.3rem;
+      background: var(--claro);
+      padding: 30px 20px;
+      border-top: 5px dashed var(--melocoton);
+      font-weight: 600;
+    }
+
+    .button-container {
+      margin-top: 30px;
+    }
+
+    .btn {
+      font-size: 1.2rem;
+      padding: 15px 25px;
+      border-radius: 12px;
+      background-color: #ff7f50;
+      color: white;
+      border: none;
+      margin: 10px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff5722;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.3rem; }
+      .llama, .machu, .rainbow { width: 90%; }
+      #countdown { font-size: 2rem; padding: 20px; }
+    }
+
+    /* Estrellas animadas */
+    .star {
+      position: absolute;
+      background: white;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: twinkle 2s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      0% { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.5); opacity: 1; }
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+      text-align: left;
+      font-size: 1.2rem;
+      animation: popIn 0.4s ease;
+    }
+
+    .close {
+      float: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .close:hover {
+      color: #ff5722;
+    }
+  </style>
+</head>
+<body>
+  <h1>¡Cristal y William rumbo a Perú! 🦙✨</h1>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop hidden>
+    <source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mp3">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <!-- Estrellas -->
+  <script>
+    for (let i = 0; i < 40; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.animationDelay = (Math.random() * 2) + 's';
+      document.body.appendChild(star);
+    }
+  </script>
+
+  <div class="images-container">
+    <img class="llama" src="https://thumbs.dreamstime.com/b/llama-linda-59225011.jpg" alt="Llama linda" />
+    <img class="machu" src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Machu_Picchu%2C_Peru.jpg" alt="Machu Picchu" />
+    <img class="rainbow" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsRTfVb5g2gtun7_MbmPL7aK3m_5ckNhvEGw&s" alt="Montaña de 7 colores" />
+  </div>
+
+  <div id="countdown">00 días 00:00:00</div>
+
+  <div class="button-container">
+    <button class="btn" onclick="openModal()">Ver Itinerario</button>
+  </div>
+
+  <footer>
+    🌈 Aventura en la montaña de 7 colores el 8 de agosto.<br>
+    ✈️ El 6 de agosto a las 5:00 p. m. empieza el gran viaje. ¡Vamos con todo! 💕
+  </footer>
+
+  <!-- Modal -->
+  <div id="itinerarioModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>🗓️ Itinerario</h2>
+        <ul>
+          <li><strong>6 ago:</strong> Vuelo a Perú ✈️</li>
+          <li><strong>7 ago:</strong> Exploración en Cusco y aclimatación 🏙️</li>
+          <li><strong>8 ago:</strong> Visita a la montaña de 7 colores 🌈</li>
+          <li><strong>9 ago:</strong> Descanso, comida y más Cusco 🍲</li>
+          <li><strong>10 ago:</strong> Tour a Machu Picchu 🦙</li>
+          <li><strong>11 ago:</strong> Regreso a casa 💼 y cumpleaños de William 🎉🎂</li>
+        </ul>
+    </div>
+  </div>
+
+  <script>
+    const targetDate = new Date("2025-08-06T17:00:00-06:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+
+      const countdown = document.getElementById("countdown");
+
+      if (diff <= 0) {
+        countdown.textContent = "¡Es hoy! ¡Cristal y William vuelan a Perú! ✈️🇵🇪";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdown.textContent = 
+        `${days} días ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }
+
+    function openModal() {
+      document.getElementById("itinerarioModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("itinerarioModal").style.display = "none";
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
